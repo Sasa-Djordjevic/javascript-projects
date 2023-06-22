@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Saša Đorđević - web developer | devsasa.com is my portfolio website with projects - Html, CSS, PHP, JavaScript, React, WordPress">
+    <title>JavaScript matchMedia method</title>
+
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon/favicon-1.png">
+
+    <!-- main css file -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- current page css file -->
+    <link href="assets/css/matchmedia_style.css" rel="stylesheet">
+    <!-- current page js file -->
+    <script src="assets/js/matchmedia.js" defer></script>
+</head>
+<body>
+    <header>
+        <!-- Navbar for desktop -->
+        <div class="headerDesktop">
+            <div class="container myflex mynav">
+                <div class="mylogo">
+                    <a href="https://www.devsasa.com">
+                        <img src="assets/images/logo/logo-1.png" alt="logo image">
+                    </a></span>
+                </div>
+                <nav>
+                    <ul class="myflex links">
+                        <li><a href="https://www.devsasa.com/projects" class="navLink">Projects</a></li>
+                        <li><a href="https://www.devsasa.com/javascript/matchmedia" class="navLink navActiv">Current Project</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar for mobile -->
+        <div class="headerMobile">
+            <div class="container myflex">
+                <div class="mylogo">
+                    <a href="https://www.devsasa.com">
+                        <img src="assets/images/logo/logo-1.png" alt="logo image">
+                    </a></span>
+                </div>
+                <nav>
+                    <input type="checkbox" class="toggle-menu">
+                    <div class="hamburger"></div>
+                    <div class="mobileMenu">
+                        <ul class="mainListMob links">     
+                            <li><a href="https://www.devsasa.com/projects" class="navLink">Projects</a></li>
+                            <li><a href="https://www.devsasa.com/javascript/matchmedia" class="navLink navActiv">Current Project</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="container sec1">
+            <h1>JS matchMedia method()</h1>
+        </section>
+        <section class="container sec3">
+            <div class="mygridSec2">
+                <div class="mygridSec2Div1">
+                    <h2>Greek islands</h2>
+                    <p>The Greek islands are a famous world destination and an integral part of the culture of Greece throughout the centuries. 
+                        Greek has about 6,000 islands scattered in the Greek Seas, of which only 227 are inhabited. 
+                        The Greek islands offer a diverse landscape: beaches stretching over many kilometers, sheltered bays and caves, and sandy and pebble beaches. 
+                        Some of the most popular Greek islands are Santorini, Mykonos, Crete, Zakynthos, Corfu, Thasos, and Lefkada.</p>
+                </div>
+                <div class="mygridSec2Div2">
+                    <div id="s2-image1" class="mySec2Image mySec2Image2"><span>Lefkada</pan></div>
+                    <div id="s2-image2" class="mySec2Image mySec2Image2"><span>Corfu</pan></div>
+                    <div id="s2-image3" class="mySec2Image mySec2Image2"><span>Thasos</pan></div>
+                    <div id="s2-image4" class="mySec2Image mySec2Image2"><span>Mykonos</pan></div>
+                    <div id="s2-image5" class="fieldImage fieldImageColor1">
+                        <div id="fieldDiv">
+                            <div>
+                                <h3 id="fieldName">Island</h3>
+                                <button id="fieldButton" >&times;</button>
+                            </div>
+                            <p id="fieldText"></p>
+                        </div>
+                    </div>
+                    <div id="s2-image6" class="mySec2Image mySec2Image2"><span>Crete</pan></div>
+                    <div id="s2-image7" class="mySec2Image mySec2Image2"><span>Zakynthos</span></div>
+                    <div id="s2-image8" class="mySec2Image mySec2Image2"><span>Santorini</span></div>
+                </div>
+            </div>
+            <div class="textHolder">
+                <p>In this project the <span class="boldText">matchMedia method</span> is used to turn on and off the background image for the image gallery at different screen sizes (below and above 768px). 
+                    The <span class="boldText">matchMedia method</span> is a JavaScript method that allows us to work with <span class="boldText">CSS media queries</span> directly in JavaScript 
+                    when we need functions that should do different things at different screen sizes on different devices or in different browsers. 
+                    The matchMedia method accepts one parameter as its value, which is the media query to be checked. 
+                    A call to this method returns a <span class="boldText">MediaQueryList object</span> which contains information on the media query.</p>
+                <p>It contains two properties: <span class="boldText">media</span>, which stores the media query as a serialized string; 
+                <span class="boldText">matches</span>, a boolean value of either true or false, depending on whether the media query is matched. 
+                By checking whether the matches property has a true or false value, we can implement functions that do different things for different screen sizes. 
+                    In order to detect the change in screen size, we can use an <span class="boldText">event listener</span>. 
+                    We can add a change event to the MediaQueryList object using the <span class="boldText">addEventListener method</span>.</p>
+            </div>
+        </section>
+    </main>    
+    <footer>
+        <div class="myfooter">
+            <div class="container myflexfooter">
+                <div class="mylogo">
+                    <a href="https://www.devsasa.com">
+                        <img src="assets/images/logo/logo-1.png" alt="logo image">
+                    </a></span>
+                </div>
+                <nav>
+                    <ul class="myflexfooter links">
+                        <li><a href="https://www.devsasa.com/projects" class="navLink">Projects</a></li>
+                        <li><a href="https://www.devsasa.com/javascript/matchmedia" class="navLink navActiv">Current Project</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                All rights reserved by <a href="https://www.devsasa.com">devsasa.com</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

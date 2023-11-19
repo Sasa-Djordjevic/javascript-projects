@@ -1,0 +1,386 @@
+body {
+    background-color: var(--lightmodegray);
+}
+
+main {
+    min-height: 1000vh;
+    min-height: calc(100vh - 150px);
+}
+
+/* sec1 ----- ----- */
+
+.sec1 h1 {
+    color: var(--primaryBlue);
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+    font-weight: 400;
+}
+
+/* sec2 ----- ----- */
+
+.board {
+    max-width: 364px;
+    margin: 2rem auto 0 auto;
+    background-color: #edeef0;
+    border-radius: 6px;
+}
+
+.drag-form {
+    padding: 2rem 1.25rem 0;
+}
+
+.drag-form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.drag-form input {
+    padding: 12px;
+    margin-bottom: 16px;
+    height: 100%;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: var(--secondaryTextGray);
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    box-shadow: var(--shadow1);
+}
+
+.drag-form input::placeholder {
+    color: #c9cdd7;
+}
+
+.drag-form button {
+    width: 120px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: var(--primaryBlue);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.drag-form button:hover {
+    background-color: var(--secondaryBlue);
+}
+
+.drag-form .drag-message1 {
+    color: var(--primaryTextGray);
+    font-size: 1rem;
+    margin: 8px;
+}
+
+.drag-form .drag-message2 {
+    color: var(--redDelete);
+    font-size: 1rem;
+    margin: 8px;
+    display: none;
+}
+
+.drag-lanes {
+    padding: 24px 20px;
+}
+
+.drag-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--primaryBlue);
+}
+
+.drag-line {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-shrink: 0;
+    padding: 12px 12px 20px 12px;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+    box-shadow: var(--shadow1);
+}
+
+.drag-task {
+    background-color: #ffffff;
+    box-shadow: var(--shadow2);
+    padding: 12px;
+    border-radius: 4px;
+    cursor: move;
+
+}
+
+.is-dragging {
+    scale: 1.05;
+    box-shadow: var(--shadow1);
+    background-color: var(--primaryBlue);
+    color: #ffffff;
+}
+
+.drag-text {
+    padding: 12px 6px;
+    color: var(--secondaryTextGray);
+}
+
+.drag-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--primaryTextGray);
+    padding-top: 8px;
+    min-height: 35px;
+}
+
+.drag-date {
+    color: var(--primaryTextGray);
+    font-size: 0.9rem;
+    margin-left: 6px;
+}
+
+.drag-edit {
+    border: 1px solid var(--greenEdit);
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--greenEdit);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0 2px;
+    margin-left: 3px;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+.drag-delete {
+    border: 1px solid var(--redDelete);
+    border-radius: 4px;
+    color: var(--redDelete);
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0 4px;
+    margin-left: 3px;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+.progress-btns .drag-edit, .progress-btns .drag-delete {
+    display: none;
+}
+
+.done-btns .drag-edit {
+    display: none;
+}
+
+#dialog-drag1,
+#dialog-drag2 {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--primaryBlue);
+    border-radius: 4px;
+    padding: 2rem 1rem;
+    width: 90%;
+    max-width: 400px;
+}
+
+#dialog-drag1::backdrop,
+#dialog-drag2::backdrop {
+    background-color: rgba(126, 134, 140, 0.7);
+}
+
+.modal-drag1,
+.modal-drag2 {
+    background-color: #ffffff;
+}
+
+.modal-drag1 h3,
+.modal-drag2 h3 {
+    color: var(--primaryTextGrayDark-1);
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.modal-drag1 input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: var(--secondaryTextGray);
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    box-shadow: var(--shadow1);
+}
+
+.modal-drag1-btns,
+.modal-drag2-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+.modal-drag1-close,
+.modal-drag1-edit,
+.modal-drag2-close,
+.modal-drag2-delete {
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.modal-drag1-close,
+.modal-drag2-close {
+    color: #ffffff;
+    background-color: var(--primaryBlue);
+}
+
+.modal-drag1-close:hover,
+.modal-drag2-close:hover {
+    background-color: var(--secondaryBlue);
+}
+
+.modal-drag1-edit {
+    color: #ffffff;
+    background-color: var(--greenEdit);
+}
+
+.modal-drag1-edit:hover {
+    background-color: var(--greenEditDark-2);
+}
+
+.modal-drag2-delete {
+    color: #ffffff;
+    background-color: var(--redDelete);
+}
+
+.modal-drag2-delete:hover {
+    background-color: var(--redDeleteDark-2);
+}
+
+.textHolder {
+    padding: 2rem 1rem 5rem 1rem;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    flex-direction: column
+}
+
+.textHolder > p {
+    margin-top: 2rem;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    color: var(--primaryTextGrayDark-2);
+}
+
+.boldText {
+    color: var(--boldText);
+    font-weight: 500;
+}
+
+/* css media queries ----- ----- */
+@media only screen and (min-width:360px) {
+    .drag-edit, .drag-delete {
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+}
+
+@media only screen and (min-width:400px) {
+    .board {
+        max-width: 364px;
+    }
+
+    .drag-lanes {
+        padding: 24px 32px;
+    }
+
+    .drag-form {
+        padding: 2rem 2rem 0;
+    }
+
+    .drag-form input {
+        width: 300px;
+    }
+
+    .drag-form .drag-message1 {
+        width: 300px;
+    }
+
+    .drag-form .drag-message2 {
+        width: 300px;
+    }
+
+    .drag-line {
+        width: 300px;
+    }
+	
+	.modal-drag1-close,
+    .modal-drag1-edit,
+    .modal-drag2-close,
+    .modal-drag2-delete {
+        padding: 12px 32px;
+    }
+}
+
+@media only screen and (min-width:480px) {
+    .textHolder {
+        padding: 2rem 2rem 5rem 2rem;
+    }
+}
+@media only screen and (min-width:768px) {
+    .board {
+        max-width: 684px;
+    }
+
+    .drag-lanes {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+        height: 100%;
+    }
+
+    .textHolder {
+        flex-direction: row;
+    }
+
+    .textHolder > p {
+        width: 45%;
+    }
+} 
+
+@media only screen and (min-width:1024px) {
+    .board {
+        max-width: 1004px;
+    }
+
+    .drag-form div {
+        flex-direction: row;
+    }
+
+    .drag-form input {
+        margin-bottom: 0px;
+        margin-right: 20px;
+    }
+
+    .drag-form button {
+        padding: 12px 32px;
+    }   
+    
+    .textHolder {
+        width: 1004px;
+        margin: 0 auto;
+        padding: 2rem 0rem 6rem 0rem;
+    }    
+} 
+

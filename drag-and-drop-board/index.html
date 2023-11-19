@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Saša Đorđević - web developer | devsasa.com is my portfolio website with projects - Html, CSS, PHP, JavaScript, React, WordPress">
+    <title>Drag and Drop Board</title>
+
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon/favicon-1.png">
+
+    <!-- main css file -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- current page css file -->
+    <link href="assets/css/draganddrop_style.css" rel="stylesheet">
+    <!-- current page js file -->
+    <script src="assets/js/draganddrop.js" defer></script>
+</head>
+<body>
+    <header>
+        <!-- Navbar for desktop -->
+        <div class="headerDesktop">
+            <div class="container myflex mynav">
+                <div class="mylogo">
+                    <a href="https://www.devsasa.com">
+                        <img src="assets/images/logo/logo-1.png" alt="logo image">
+                    </a></span>
+                </div>
+                <nav>
+                    <ul class="myflex links">
+                        <li><a href="https://www.devsasa.com/javascript/matchmedia" class="navLink navActiv">Current Project</a></li>
+						<li><a href="https://www.devsasa.com/projects" class="navLink">Projects</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar for mobile -->
+        <div class="headerMobile">
+            <div class="container myflex">
+                <div class="mylogo">
+                    <a href="https://www.devsasa.com">
+                        <img src="assets/images/logo/logo-1.png" alt="logo image">
+                    </a></span>
+                </div>
+                <nav>
+                    <input type="checkbox" class="toggle-menu">
+                    <div class="hamburger"></div>
+                    <div class="mobileMenu">
+                        <ul class="mainListMob links">     
+                            <li><a href="https://www.devsasa.com/javascript/matchmedia" class="navLink navActiv">Current Project</a></li>
+							<li><a href="https://www.devsasa.com/projects" class="navLink">Projects</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+		<section class="container sec1">
+			<h1>Drag and Drop Board</h1>
+		</section>
+		<section class="container sec2">
+			<div class="board">
+				<form class="drag-form">
+					<div>
+						<input type="text" placeholder="To Do Task ..." id="drag-input">
+						<button type="submit">Add +</button>
+					</div>
+					<p class="drag-message1">* Tasks are saved in the local storage.</p>
+					<p class="drag-message2"></p>
+				</form>
+				<div class="drag-lanes">
+					<div class="drag-line" id="todo-line">
+						<h2 class="drag-title">To Do Tasks</h2>
+					</div>
+					<div class="drag-line" id="progress-line">
+						<h2 class="drag-title">In Progress</h2>
+					</div>
+					<div class="drag-line" id="done-line">
+						<h2 class="drag-title">Done Tasks</h2>
+					</div>
+				</div>
+			</div>
+			<div class="textHolder">
+				<p>The drag-and-drop board was created with the help of the <span class="boldText">HTML5 Drag and Drop API</span>. 
+				In order for the task to have a draggable effect, each task element is assigned with the <span class="boldText">draggable attribute</span>. 
+				Dragging tasks from one list to another (to-do, in-progress, done task lists) is done using the <span class="boldText">dragstart, dragend, and dragover events</span>.</p>
+				<p>Tasks that are added to the board are stored in the <span class="boldText">local storage</span>. There can be a maximum of twenty tasks on the board. 
+				The task text must have more than 3 characters and less than 100 characters.</p>
+			</div>
+		</section>
+		<dialog id="dialog-drag1">
+			<div class="modal-drag1">
+				<h3>Edit the Task</h3>
+				<form>
+					<input type="text" value="" id="modal-drag1-input">
+					<input type="hidden" value="" id="modal-drag1-id">
+					<div class="modal-drag1-btns">
+						<button type="button" class="modal-drag1-close">Close</button>
+						<button type="submit" class="modal-drag1-edit">Edit</button>
+					</div>
+				</form>
+			</div>
+		</dialog>
+		<dialog id="dialog-drag2">
+			<div class="modal-drag2">
+				<h3>Do you really want to delete the task?</h3>
+				<form>
+					<input type="hidden" value="" id="modal-drag2-id">
+					<div class="modal-drag2-btns">
+						<button type="button" class="modal-drag2-close">Close</button>
+						<button type="submit" class="modal-drag2-delete">Delete</button>
+					</div>
+				</form>
+			</div>
+		</dialog>
+	</main>
+    <footer>
+        <div class="myfooter">
+            <div class="container myflexfooter">
+                <div class="mylogo">
+                    <a href="https://www.devsasa.com">
+                        <img src="assets/images/logo/logo-1.png" alt="logo image">
+                    </a></span>
+                </div>
+                <nav>
+                    <ul class="myflexfooter links">
+                        <li><a href="https://www.devsasa.com/javascript/matchmedia" class="navLink navActiv">Current Project</a></li>
+						<li><a href="https://www.devsasa.com/projects" class="navLink">Projects</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                All rights reserved by <a href="https://www.devsasa.com">devsasa.com</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
